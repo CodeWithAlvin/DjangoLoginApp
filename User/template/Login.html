@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap" rel="stylesheet">
+<title>LOGIN TO CONTINUE</title>
+<style type="text/css">
+*{
+	padding:0px;
+	margin:0px;
+	box-sizing:border-box;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color:white;
+} 
+
+section::before{
+	background-image:url('/static/image/background.jpg');
+	background-repeat:no-repet;
+	background-position:center;
+	background-size:cover;
+	content:"";
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:100vw;
+	height:100vh;
+	z-index:-1;
+}
+.full{
+	display:flex;
+	flex-direction:column;
+	height:80vh;
+	justify-content:center;
+	align-content:center;
+}
+
+.Loginform{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-self:center;
+	height:600px;
+	width:60vw;
+	font-size:2rem;
+	overflow:auto;
+}
+.logo{
+	width:150px;
+	height:150px;
+	border-top:2px solid orange;
+	border-bottom:2px solid yellow;
+	border-left:2px solid orange;
+	border-right:2px solid yellow;
+	border-radius:35px;
+	align-self:center;
+	margin-bottom:40px;
+}
+h1 {
+	text-align:center;
+	margin-bottom:40px;
+}
+
+input{
+	display:block;
+	width:22rem;
+	border:none;
+	border-bottom:2px solid yellow;
+	border-top:2px solid orange;
+	border-radius:20px 20px 60px 60px;
+	margin:10px 0px;
+	text-align:center;
+	align-self:center;
+	font-size:2rem;
+}
+#submit-btn{
+	transition-duration: 2s;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	background-color: #4CAF50;
+	width:7.8rem;
+	height:4.5rem;
+	border:2px solid #4CAF50;
+	border-radius:10px 10px 40px 40px;
+	align-self:center;
+	margin-top:15px;
+}
+.inpent{
+	background:none;
+	height:60px
+}
+
+</style>
+</head>
+<body>
+
+<section class="full">
+	<form class="Loginform" method="post" action="login">
+		{%csrf_token%}
+		<h1>Login To Continue</h1>
+		<img class="logo Position" src="/static/image/logo.jpg" alt="logo">	
+		<input type="text" class="inpent" name="USERNAME" placeholder="Username">
+		<input type="password" class="inpent" name="PASSWORD" placeholder="Password">
+		<input type="submit" id="submit-btn" name="submit">
+	</form>
+</section>
+
+</body>
+</html>

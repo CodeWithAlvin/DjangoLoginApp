@@ -23,6 +23,7 @@ button{
 	animation-iteration-count:1;
 	animation-timing-function:ease-in-out;
 	animation-delay:0.1s;
+	animation-fill-mode: forwards;
 	transition-property:all;
 	transition-duration:2s;
 	transition-timing-function:cubic-Bezier;
@@ -32,18 +33,23 @@ button{
 	font-size:20px;
 	transform:rotate(45deg);
 	transform:scale(2);
-	transform:skew(6 );
+	transform:skew(6);
 }
 @keyframes ani1{
-	from{
+	0%{
 	width:150px;
 	top:0px;
 	left:0px;
 	}
-	to{
+	50%{
 	width:700px;
+	top:50px;
+	left:40px;
+	}
+	100%{
+	width:250px;
 	top:250px;
-	left:200px
+	left:200px;
 	}
 }
 
@@ -65,11 +71,6 @@ button{
 <button><a href="/logout">LOGOUT</a></button>
 <section class="main">
 	<div class="container">
-		<p>Hey {{name}}</p>
-		<p>how's this </p>
-		<p>thumbs up if good</p>
-	</div>
-	<div class="container" id ="2nd">
 		<p>Hey {{name}}</p>
 		<p>how's this </p>
 		<p>thumbs up if good</p>
